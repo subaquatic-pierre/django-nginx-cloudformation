@@ -1,0 +1,28 @@
+{
+  "family": "DSBWebAppTask",
+  "taskRoleArn": "arn:aws:iam::032796414879:role/ECSTaskService",
+  "executionRoleArn": "arn:aws:iam::032796414879:role/ECSTaskService",
+  "networkMode": "bridge",
+  "requiresCompatibilities": ["EC2"],
+  "memory": 512,
+  "cpu": 100,
+  "containerDefinitions": [
+    {
+      "name": "django-app",
+      "image": "python",
+      "repositoryCredentials": {
+        "credentialsParameter": ""
+      },
+      "cpu": 10,
+      "memory": 512,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ]
+}
